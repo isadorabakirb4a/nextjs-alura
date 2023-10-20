@@ -1,7 +1,7 @@
 import Footer from '../../components/patterns/Footer';
 import Link from '../../components/Link';
 import { theme } from '../../theme/theme';
-import { Box, Text } from '../../theme/components';
+import { Box, Text, Icon } from '../../theme/components';
 
 export default function FAQScreen({ faq }) {
   return (
@@ -71,25 +71,28 @@ export default function FAQScreen({ faq }) {
             </Text>
 
             <Text
-              as="p"
               styleSheet={{
+                textVariant: theme.typography.variants.body4,
+                fontWeight: "600",
+                display: 'inline-flex',
+                color: theme.colors.primary["400"],
+                alignItems: 'center',
                 marginTop: theme.space.x4,
-                textVariant: theme.typography.variants.body1,
-                color: theme.colors.neutral[500],
+                backgroundColor: theme.colors.primary["100"],
+                paddingHorizontal: theme.space['x2.5'],
+                paddingVertical: theme.space['x1'],
+                borderRadius: theme.space.x64,
               }}
             >
-              <Link
-                href="/"
+              <Icon
                 styleSheet={{
-                  color: theme.colors.primary[400],
-                  fontWeight: '500',
-                  hover: {
-                    color: theme.colors.primary[300],
-                  },
+                  iconVariant: 'chevronLeft',
+                  marginRight: theme.space.x1,
+                  marginBottom: theme.space.x1,
                 }}
-              >
-                Voltar para home
-              </Link>
+                aria-hidden="true"
+                />
+                <Link href="/">Voltar para Home</Link>
             </Text>
           </Box>
           <Box
